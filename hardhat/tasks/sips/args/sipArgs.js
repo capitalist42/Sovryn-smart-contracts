@@ -1081,6 +1081,23 @@ const getArgsSip0079 = async (hre) => {
     return { args, governor: "GovernorOwner" };
 };
 
+const getArgsSIP0077 = async (hre) => {
+    const {
+        ethers,
+        deployments: { get, log },
+    } = hre;
+
+    const args = {
+        targets: [(await get("SOV")).address],
+        values: [0],
+        signatures: ["symbol()"],
+        data: ["0x"],
+        description:
+            "SIP-0077: Enhancement of Staking Rewards and Governance Mechanisms in Anticipation of BitcoinOS, Details: https://github.com/DistributedCollective/SIPS/blob/8cb4f72/SIP-0077.md, sha256: f7d785c2b5c6bd6135eeef07ea00a1111bc08b356f20c501ca470f2896f03ee1",
+    };
+    return { args, governor: "GovernorAdmin" };
+};
+
 module.exports = {
     sampleGovernorAdminSIP,
     sampleGovernorOwnerSIP,
@@ -1095,6 +1112,7 @@ module.exports = {
     getArgsSip0046Part4,
     getArgsSipSov625,
     getArgsSip0073,
+    getArgsSIP0077,
     getArgsSip_SOV_3161,
     getArgsSip0074,
     getArgsSip0076,
