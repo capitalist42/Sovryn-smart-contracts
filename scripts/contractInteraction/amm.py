@@ -232,9 +232,9 @@ def addLiquidityV1FromMultisigUsingWrapper(wrapper, converter, tokens, amounts, 
     # approve
     token = Contract.from_abi("ERC20", address=tokens[1], abi=ERC20.abi, owner=conf.acct)
     data = token.approve.encode_input(wrapperProxy.address, amounts[1])
-    #print(data)
+    print(data)
 
-    #sendWithMultisig(conf.contracts['multisig'], token.address, data, conf.acct)
+    sendWithMultisig(conf.contracts['multisig'], token.address, data, conf.acct)
     
     # addLiquidityToV1
     data = wrapperProxy.addLiquidityToV1.encode_input(converter, tokens, amounts, minReturn)
