@@ -29,18 +29,23 @@ def main():
     '''
 
     # call the function you want here
+    
+    ##################################
+
     #printV1ConverterData('0x4531DD0f24D204c08b251084E12ce3D3e70Dd03e')
     #printV1ConverterData('0xe81373285eb8cdee2e0108e98c5aa022948da9d2')
+    #getLMInfo()
+    #getPoolInfo(conf.contracts['LiquidityMiningConfigToken'])
+    #getPoolInfo(conf.contracts['(WR)BTC/POWA'])
     # rbtcBalance = 1.2235*10**18
     # powaBalance = 29071399974.7820*10**18 
     # product = powaBalance * rbtcBalance
     # amount = 1000 *1e18
     # getTargetAmountFromAMM(sovBalance, 50000, rbtcBalance, 50000, amount)
 
-    sendTokensFromMultisig(conf.contracts['POWA'], '0x8510fe153b9e6fabee709d75bf0a864cd27d7593', 683101993102460714498381053952)
+    #sendTokensFromMultisig(conf.contracts['POWA'], '0x8510fe153b9e6fabee709d75bf0a864cd27d7593', 683101993102460714498381053952)
     #printV1ConverterData(conf.contracts['ConverterPOWA'])
     #addLiquidityV1FromMultisigUsingWrapper(conf.contracts['RBTCWrapperProxyWithoutLM'], conf.contracts['ConverterPOWA'], [conf.contracts['WRBTC'], conf.contracts['POWA']], [1.2235*10**18,29071399974.7820*10**18], 1)
-    ##################################
 
     #cancelTeamVestingsOfAccount('0x673b37941AB527e0EEe13C1Ff09298ef1911d7D6', 1703845695)
     #cancelTeamVestingsOfAccount('0x56B00ca0a274fB53449fBF2DB0253B809E364975')
@@ -91,7 +96,7 @@ def main():
     
     #print("fastBTCBiDi.balance()", loadBiDiFastBTC().balance()/1e18)
     #print("getFastBTCOfframpAvailableBalance()", getFastBTCOfframpAvailableBalance()/1e18)
-    #withdrawRBTCFromFastBTCBiDi(30e18, '0xD9ECB390a6a32ae651D5C614974c5570c50A5D89')
+    #withdrawRBTCFromFastBTCBiDi(25e18, '0xD9ECB390a6a32ae651D5C614974c5570c50A5D89')
     #withdrawRBTCFromFastBTCBiDi(30e18, conf.contracts['multisig'])
     #readPauser(conf.contracts['iXUSD'])
     #getBalance(conf.contracts['DLLR'], '0xAc2D05a148Ab512EDEdc7280C00292ed33D31F1a') ## testnet
