@@ -29,9 +29,11 @@ def main():
     '''
 
     # call the function you want here
-    
     ##################################
 
+    #getExchequerBalances()
+    # transferOwnershipFromMultisig(conf.contracts['ConverterPOWA'], conf.contracts['TimelockOwner'])
+    # transferOwnershipFromMultisig(conf.contracts['POWAPoolOracle'], conf.contracts['TimelockAdmin'])
     #printV1ConverterData('0x4531DD0f24D204c08b251084E12ce3D3e70Dd03e')
     #printV1ConverterData('0xe81373285eb8cdee2e0108e98c5aa022948da9d2')
     #getLMInfo()
@@ -114,7 +116,7 @@ def main():
     #sendTokensFromMultisig(conf.contracts['SOV'], '0x4f3948816785e30c3378eD3b9F2de034e3AE2E97', 250000e18)
     #sendFromMultisig(conf.contracts['GenericTokenSender'], 0.014e18)
     #sendFromMultisig('0xc0AAcbDB9Ce627A348B91CfDB67eC6b2FBC3dCbd', 0.1e18)
-    #sendFromMultisig(conf.contracts['FastBTC'], 15e18)
+    #sendFromMultisig(conf.contracts['FastBTC'], 8e18)
     #sendFromMultisig('0xD9ECB390a6a32ae651D5C614974c5570c50A5D89', 30e18)
     #sendFromMultisig('0x986c65fc1783a445ceccade74234dc8627d429d8', 0.1e18) #FastBTC on-ramp master node
 
@@ -213,7 +215,7 @@ def main():
     #setFeesController(conf.contracts['FeeSharingCollectorProxy1DayStaking'])
 
     #revokeConfirmationMS(txId)
-    #bal = getFastBTCOfframpAvailableBalance(conf.contracts['FastBTCBiDi'])
+    #bal = getFastBTCOfframpAvailableBalance()
     #print('FastBTC offramp balance:', bal/10**18)
     #print('Multisig balance:', getContractBTCBalance(conf.contracts['multisig'])/1e18)
 
@@ -224,6 +226,8 @@ def main():
     #minReturn = getReturnForFirstLiquidityProvisionOnV1([10e18, 250000e18])
     #addLiquidityV1FromMultisigUsingWrapper(conf.contracts['RBTCWrapperProxyWithoutLM'], conf.contracts['ConverterDLLR'], [conf.contracts['WRBTC'], conf.contracts['DLLR']], [0.1e18,2500e18] , 1)
     #acceptOwnershipWithMultisig(conf.contracts['ConverterDLLR'])
+    #acceptOwnershipWithMultisig(conf.contracts['ConverterPOWA'])
+    #acceptOwnershipWithMultisig(conf.contracts['POWAPoolOracle'])
     #redeemFromAggregator(conf.contracts['XUSDAggregatorProxy'], conf.contracts['DLLR'], 5e18)
     #mintAggregatedToken(conf.contracts['DLLRAggregatorProxy'], conf.contracts['ZUSD'], 5e18) #can be still used if having free ZUSD
     #buyWRBTC(0.0002e18)
