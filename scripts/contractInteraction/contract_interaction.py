@@ -29,7 +29,9 @@ def main():
     '''
 
     # call the function you want here
+    
     ##################################
+    #addWhitelistConverterFeeSharingCollectorProxy(conf.contracts['ConverterPOWA'])
 
     #getExchequerBalances()
     # transferOwnershipFromMultisig(conf.contracts['ConverterPOWA'], conf.contracts['TimelockOwner'])
@@ -116,7 +118,7 @@ def main():
     #sendTokensFromMultisig(conf.contracts['SOV'], '0x4f3948816785e30c3378eD3b9F2de034e3AE2E97', 250000e18)
     #sendFromMultisig(conf.contracts['GenericTokenSender'], 0.014e18)
     #sendFromMultisig('0xc0AAcbDB9Ce627A348B91CfDB67eC6b2FBC3dCbd', 0.1e18)
-    #sendFromMultisig(conf.contracts['FastBTC'], 8e18)
+    #sendFromMultisig(conf.contracts['FastBTC'], 6e18)
     #sendFromMultisig('0xD9ECB390a6a32ae651D5C614974c5570c50A5D89', 30e18)
     #sendFromMultisig('0x986c65fc1783a445ceccade74234dc8627d429d8', 0.1e18) #FastBTC on-ramp master node
 
