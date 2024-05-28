@@ -51,6 +51,8 @@ def main():
     #printV1ConverterData(conf.contracts['ConverterPOWA'])
     #addLiquidityV1FromMultisigUsingWrapper(conf.contracts['RBTCWrapperProxyWithoutLM'], conf.contracts['ConverterPOWA'], [conf.contracts['WRBTC'], conf.contracts['POWA']], [1.2235*10**18,29071399974.7820*10**18], 1)
 
+    #addOwnerToAnyMultisig('0x37a706259F5201c03f6Cb556A960f30F86842D01','0x13Be55487D37FE3C66EE7305e1e9C1ac85de75Ae') # BF
+    #removeOwnerFromAnyMultisig('0x37a706259F5201c03f6Cb556A960f30F86842D01','0x9E0816a71B53ca67201a5088df960fE90910DE55') # BF
     #cancelTeamVestingsOfAccount('0x673b37941AB527e0EEe13C1Ff09298ef1911d7D6', 1703845695)
     #cancelTeamVestingsOfAccount('0x56B00ca0a274fB53449fBF2DB0253B809E364975')
 
