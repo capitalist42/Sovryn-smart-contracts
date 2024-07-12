@@ -401,8 +401,13 @@ def getExchequerBalances():
     
     mocPool = getBalance(conf.contracts['(WR)BTC/MOC'], conf.contracts['multisig'])
     mocPoolTotal = getTotalSupply(conf.contracts['(WR)BTC/MOC'])
-    mocBalanceInPool = getBalance(conf.contracts['SOV'], conf.contracts['ConverterMOC'])
+    mocBalanceInPool = getBalance(conf.contracts['MOC'], conf.contracts['ConverterMOC'])
     rbtcBalanceInMocPool = getBalance(conf.contracts['WRBTC'], conf.contracts['ConverterMOC'])
+
+    powaPool = getBalance(conf.contracts['(WR)BTC/POWA'], conf.contracts['multisig'])
+    powaPoolTotal = getTotalSupply(conf.contracts['(WR)BTC/POWA'])
+    powaBalanceInPool = getBalance(conf.contracts['POWA'], conf.contracts['ConverterPOWA'])
+    rbtcBalanceInPowaPool = getBalance(conf.contracts['WRBTC'], conf.contracts['ConverterPOWA'])
 
     print('----------------')
     bnbBalance = bnbPool / bnbPoolTotal * bnbBalanceInPool
@@ -420,6 +425,9 @@ def getExchequerBalances():
     mocBalance = mocPool / mocPoolTotal * mocBalanceInPool
     wrbtcMocBalance = mocPool / mocPoolTotal * rbtcBalanceInMocPool
 
+    powaBalance = powaPool / powaPoolTotal * powaBalanceInPool
+    wrbtcPowaBalance = powaPool / powaPoolTotal * rbtcBalanceInPowaPool
+
     print("USDT balance: ", usdtBalance/1e18)
     print("BPRO balance: ", bproBalance/1e18)
     print("BNB balance: ", bnbBalance/1e18)
@@ -432,6 +440,8 @@ def getExchequerBalances():
     print("WRBTC balance in SOV pool: ", wrbtcSovBalance/1e18)
     print("MOC balance: ", mocBalance/1e18)
     print("WRBTC balance in MOC pool: ", wrbtcMocBalance/1e18)
+    print("POWA balance: ", powaBalance/1e18)
+    print("WRBTC balance in POWA pool: ", wrbtcPowaBalance/1e18)
 
 
 def getConversionFee(converterAddress):
