@@ -105,7 +105,9 @@ contract StakingFuzzTest is Test {
                 abi.encode(address(dummyProtocol), address(staking))
             )
         );
-        feeSharingCollector = IFeeSharingCollector(deployCode("FeeSharingCollector.sol"));
+        feeSharingCollector = IFeeSharingCollector(
+            deployCode("FeeSharingCollector.sol:FeeSharingCollector")
+        );
         feeSharingCollectorProxy.setImplementation(address(feeSharingCollector));
         feeSharingCollector = IFeeSharingCollector(address(feeSharingCollectorProxy));
 
@@ -113,6 +115,9 @@ contract StakingFuzzTest is Test {
         staking.setFeeSharing(address(feeSharingCollector));
 
         amount = 1000;
+        // user = makeAddr("user1"); // address(1)
+        // user2 = makeAddr("user2"); // address(2);
+        // delegatee = makeAddr("delegatee"); // address(3);
         user = address(1);
         user2 = address(2);
         delegatee = address(3);

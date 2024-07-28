@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.2 <0.9.0;
 
-import { StdStorage } from "./StdStorage.sol";
-import { Vm, VmSafe } from "./Vm.sol";
+import {StdStorage} from "./StdStorage.sol";
+import {Vm, VmSafe} from "./Vm.sol";
 
 abstract contract CommonBase {
     // Cheat code address, 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D.
@@ -12,8 +12,7 @@ abstract contract CommonBase {
     // Used when deploying with create2, https://github.com/Arachnid/deterministic-deployment-proxy.
     address internal constant CREATE2_FACTORY = 0x4e59b44847b379578588920cA78FbF26c0B4956C;
     // Default address for tx.origin and msg.sender, 0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38.
-    address internal constant DEFAULT_SENDER =
-        address(uint160(uint256(keccak256("foundry default caller"))));
+    address internal constant DEFAULT_SENDER = address(uint160(uint256(keccak256("foundry default caller"))));
     // Address of the test contract, deployed by the DEFAULT_SENDER.
     address internal constant DEFAULT_TEST_CONTRACT = 0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f;
     // Deterministic deployment address of the Multicall3 contract.

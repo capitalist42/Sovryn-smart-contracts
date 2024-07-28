@@ -1,5 +1,6 @@
 ## How To
 ### Run all the forge tests
+Make sure you have foundry installed. Follow Installation guide: https://book.getfoundry.sh/getting-started/installation.   
 ```
 forge test
 ```

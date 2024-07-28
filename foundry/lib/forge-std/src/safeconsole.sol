@@ -4,8 +4,7 @@ pragma solidity >=0.6.2 <0.9.0;
 /// @author philogy <https://github.com/philogy>
 /// @dev Code generated automatically by script.
 library safeconsole {
-    uint256 constant CONSOLE_ADDR =
-        0x000000000000000000000000000000000000000000636F6e736F6c652e6c6f67;
+    uint256 constant CONSOLE_ADDR = 0x000000000000000000000000000000000000000000636F6e736F6c652e6c6f67;
 
     // Credit to [0age](https://twitter.com/z0age/status/1654922202930888704) and [0xdapper](https://github.com/foundry-rs/forge-std/pull/374)
     // for the view-to-pure log trick.
@@ -24,11 +23,7 @@ library safeconsole {
         }
     }
 
-    function _memcopy(
-        uint256 fromOffset,
-        uint256 toOffset,
-        uint256 length
-    ) private pure {
+    function _memcopy(uint256 fromOffset, uint256 toOffset, uint256 length) private pure {
         function(uint256, uint256, uint256) internal view fnIn = _memcopyView;
         function(uint256, uint256, uint256) internal pure pureMemcopy;
         assembly {
@@ -37,11 +32,7 @@ library safeconsole {
         pureMemcopy(fromOffset, toOffset, length);
     }
 
-    function _memcopyView(
-        uint256 fromOffset,
-        uint256 toOffset,
-        uint256 length
-    ) private view {
+    function _memcopyView(uint256 fromOffset, uint256 toOffset, uint256 length) private view {
         assembly {
             pop(staticcall(gas(), 0x4, fromOffset, length, toOffset, length))
         }
@@ -155,15 +146,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -258,15 +241,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -364,15 +339,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -470,15 +437,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -513,15 +472,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -556,15 +507,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -599,15 +542,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -644,15 +579,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -683,11 +610,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        address p2
-    ) internal pure {
+    function log(address p0, address p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -712,11 +635,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bool p2
-    ) internal pure {
+    function log(address p0, address p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -741,11 +660,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        uint256 p2
-    ) internal pure {
+    function log(address p0, address p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -770,11 +685,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bytes32 p2
-    ) internal pure {
+    function log(address p0, address p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -784,15 +695,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -821,11 +724,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        address p2
-    ) internal pure {
+    function log(address p0, bool p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -850,11 +749,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bool p2
-    ) internal pure {
+    function log(address p0, bool p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -879,11 +774,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        uint256 p2
-    ) internal pure {
+    function log(address p0, bool p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -908,11 +799,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bytes32 p2
-    ) internal pure {
+    function log(address p0, bool p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -922,15 +809,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -959,11 +838,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        address p2
-    ) internal pure {
+    function log(address p0, uint256 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -988,11 +863,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bool p2
-    ) internal pure {
+    function log(address p0, uint256 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1017,11 +888,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        uint256 p2
-    ) internal pure {
+    function log(address p0, uint256 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1046,11 +913,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(address p0, uint256 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1060,15 +923,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1097,11 +952,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        address p2
-    ) internal pure {
+    function log(address p0, bytes32 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1111,15 +962,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1148,11 +991,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bool p2
-    ) internal pure {
+    function log(address p0, bytes32 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1162,15 +1001,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1199,11 +1030,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        uint256 p2
-    ) internal pure {
+    function log(address p0, bytes32 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1213,15 +1040,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1250,11 +1069,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(address p0, bytes32 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1266,15 +1081,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1308,11 +1115,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        address p2
-    ) internal pure {
+    function log(bool p0, address p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1337,11 +1140,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bool p2
-    ) internal pure {
+    function log(bool p0, address p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1366,11 +1165,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        uint256 p2
-    ) internal pure {
+    function log(bool p0, address p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1395,11 +1190,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bool p0, address p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1409,15 +1200,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1446,11 +1229,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        address p2
-    ) internal pure {
+    function log(bool p0, bool p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1475,11 +1254,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bool p2
-    ) internal pure {
+    function log(bool p0, bool p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1504,11 +1279,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        uint256 p2
-    ) internal pure {
+    function log(bool p0, bool p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1533,11 +1304,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bool p0, bool p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1547,15 +1314,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1584,11 +1343,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        address p2
-    ) internal pure {
+    function log(bool p0, uint256 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1613,11 +1368,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bool p2
-    ) internal pure {
+    function log(bool p0, uint256 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1642,11 +1393,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        uint256 p2
-    ) internal pure {
+    function log(bool p0, uint256 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1671,11 +1418,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bool p0, uint256 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1685,15 +1428,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1722,11 +1457,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        address p2
-    ) internal pure {
+    function log(bool p0, bytes32 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1736,15 +1467,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1773,11 +1496,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bool p2
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1787,15 +1506,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1824,11 +1535,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        uint256 p2
-    ) internal pure {
+    function log(bool p0, bytes32 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1838,15 +1545,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1875,11 +1574,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1891,15 +1586,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -1933,11 +1620,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        address p2
-    ) internal pure {
+    function log(uint256 p0, address p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1962,11 +1645,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bool p2
-    ) internal pure {
+    function log(uint256 p0, address p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -1991,11 +1670,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        uint256 p2
-    ) internal pure {
+    function log(uint256 p0, address p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2020,11 +1695,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bytes32 p2
-    ) internal pure {
+    function log(uint256 p0, address p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2034,15 +1705,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2071,11 +1734,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        address p2
-    ) internal pure {
+    function log(uint256 p0, bool p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2100,11 +1759,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bool p2
-    ) internal pure {
+    function log(uint256 p0, bool p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2129,11 +1784,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        uint256 p2
-    ) internal pure {
+    function log(uint256 p0, bool p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2158,11 +1809,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bytes32 p2
-    ) internal pure {
+    function log(uint256 p0, bool p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2172,15 +1819,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2209,11 +1848,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        address p2
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2238,11 +1873,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bool p2
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2267,11 +1898,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        uint256 p2
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2296,11 +1923,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2310,15 +1933,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2347,11 +1962,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        address p2
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2361,15 +1972,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2398,11 +2001,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bool p2
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2412,15 +2011,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2449,11 +2040,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        uint256 p2
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2463,15 +2050,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2500,11 +2079,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2516,15 +2091,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2558,11 +2125,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        address p2
-    ) internal pure {
+    function log(bytes32 p0, address p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2572,15 +2135,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2609,11 +2164,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bool p2
-    ) internal pure {
+    function log(bytes32 p0, address p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2623,15 +2174,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2660,11 +2203,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        uint256 p2
-    ) internal pure {
+    function log(bytes32 p0, address p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2674,15 +2213,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2711,11 +2242,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bytes32 p0, address p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2727,15 +2254,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2769,11 +2288,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        address p2
-    ) internal pure {
+    function log(bytes32 p0, bool p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2783,15 +2298,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2820,11 +2327,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bool p2
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2834,15 +2337,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2871,11 +2366,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        uint256 p2
-    ) internal pure {
+    function log(bytes32 p0, bool p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2885,15 +2376,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2922,11 +2405,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2938,15 +2417,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -2980,11 +2451,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        address p2
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -2994,15 +2461,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3031,11 +2490,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bool p2
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3045,15 +2500,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3082,11 +2529,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        uint256 p2
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3096,15 +2539,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3133,11 +2568,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3149,15 +2580,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3191,11 +2614,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        address p2
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, address p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3207,15 +2626,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3249,11 +2660,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bool p2
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bool p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3265,15 +2672,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3307,11 +2706,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        uint256 p2
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, uint256 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3323,15 +2718,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3365,11 +2752,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bytes32 p2
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bytes32 p2) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3383,15 +2766,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3430,12 +2805,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(address p0, address p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3464,12 +2834,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, address p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3498,12 +2863,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, address p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3532,12 +2892,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, address p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3548,15 +2903,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3588,12 +2935,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(address p0, address p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3622,12 +2964,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, address p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3656,12 +2993,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, address p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3690,12 +3022,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, address p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3706,15 +3033,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3746,12 +3065,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, address p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3780,12 +3094,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, address p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3814,12 +3123,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, address p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3848,12 +3152,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, address p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3864,15 +3163,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3904,12 +3195,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, address p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3920,15 +3206,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -3960,12 +3238,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, address p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -3976,15 +3249,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4016,12 +3281,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, address p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4032,15 +3292,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4072,12 +3324,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        address p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, address p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4090,15 +3337,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4135,12 +3374,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bool p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4169,12 +3403,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bool p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4203,12 +3432,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bool p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4237,12 +3461,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bool p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4253,15 +3472,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4293,12 +3504,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bool p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4327,12 +3533,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bool p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4361,12 +3562,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bool p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4395,12 +3591,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bool p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4411,15 +3602,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4451,12 +3634,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bool p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4485,12 +3663,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bool p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4519,12 +3692,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bool p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4553,12 +3721,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bool p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4569,15 +3732,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4609,12 +3764,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bool p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4625,15 +3775,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4665,12 +3807,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bool p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4681,15 +3818,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4721,12 +3850,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bool p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4737,15 +3861,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4777,12 +3893,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bool p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bool p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4795,15 +3906,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4840,12 +3943,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(address p0, uint256 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4874,12 +3972,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, uint256 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4908,12 +4001,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4942,12 +4030,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -4958,15 +4041,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -4998,12 +4073,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5032,12 +4102,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5066,12 +4131,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5100,12 +4160,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5116,15 +4171,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5156,12 +4203,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, uint256 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5190,12 +4232,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, uint256 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5224,12 +4261,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5258,12 +4290,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5274,15 +4301,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5314,12 +4333,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5330,15 +4344,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5370,12 +4376,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5386,15 +4387,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5426,12 +4419,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5442,15 +4430,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5482,12 +4462,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        uint256 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, uint256 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5500,15 +4475,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5545,12 +4512,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5561,15 +4523,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5601,12 +4555,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5617,15 +4566,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5657,12 +4598,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5673,15 +4609,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5713,12 +4641,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5731,15 +4654,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5776,12 +4691,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5792,15 +4702,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5832,12 +4734,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5848,15 +4745,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5888,12 +4777,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5904,15 +4788,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -5944,12 +4820,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -5962,15 +4833,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6007,12 +4870,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6023,15 +4881,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6063,12 +4913,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6079,15 +4924,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6119,12 +4956,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6135,15 +4967,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6175,12 +4999,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6193,15 +5012,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6238,12 +5049,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6256,15 +5062,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6301,12 +5099,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6319,15 +5112,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6364,12 +5149,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6382,15 +5162,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6427,12 +5199,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        address p0,
-        bytes32 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(address p0, bytes32 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6447,15 +5214,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6497,12 +5256,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, address p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6531,12 +5285,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, address p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6565,12 +5314,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, address p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6599,12 +5343,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, address p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6615,15 +5354,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6655,12 +5386,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, address p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6689,12 +5415,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, address p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6723,12 +5444,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, address p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6757,12 +5473,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, address p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6773,15 +5484,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6813,12 +5516,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, address p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6847,12 +5545,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, address p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6881,12 +5574,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, address p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6915,12 +5603,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, address p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6931,15 +5614,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -6971,12 +5646,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, address p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -6987,15 +5657,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7027,12 +5689,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, address p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7043,15 +5700,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7083,12 +5732,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, address p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7099,15 +5743,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7139,12 +5775,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        address p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, address p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7157,15 +5788,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7202,12 +5825,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bool p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7236,12 +5854,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bool p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7270,12 +5883,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bool p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7304,12 +5912,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bool p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7320,15 +5923,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7360,12 +5955,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bool p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7394,12 +5984,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bool p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7428,12 +6013,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bool p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7462,12 +6042,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bool p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7478,15 +6053,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7518,12 +6085,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bool p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7552,12 +6114,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bool p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7586,12 +6143,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bool p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7620,12 +6172,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bool p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7636,15 +6183,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7676,12 +6215,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bool p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7692,15 +6226,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7732,12 +6258,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bool p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7748,15 +6269,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7788,12 +6301,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bool p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7804,15 +6312,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7844,12 +6344,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bool p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bool p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7862,15 +6357,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -7907,12 +6394,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7941,12 +6423,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -7975,12 +6452,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8009,12 +6481,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8025,15 +6492,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8065,12 +6524,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8099,12 +6553,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8133,12 +6582,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8167,12 +6611,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8183,15 +6622,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8223,12 +6654,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8257,12 +6683,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8291,12 +6712,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8325,12 +6741,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8341,15 +6752,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8381,12 +6784,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8397,15 +6795,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8437,12 +6827,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8453,15 +6838,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8493,12 +6870,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8509,15 +6881,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8549,12 +6913,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        uint256 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, uint256 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8567,15 +6926,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8612,12 +6963,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8628,15 +6974,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8668,12 +7006,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8684,15 +7017,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8724,12 +7049,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8740,15 +7060,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8780,12 +7092,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8798,15 +7105,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8843,12 +7142,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8859,15 +7153,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8899,12 +7185,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8915,15 +7196,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -8955,12 +7228,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -8971,15 +7239,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9011,12 +7271,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9029,15 +7284,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9074,12 +7321,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9090,15 +7332,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9130,12 +7364,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9146,15 +7375,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9186,12 +7407,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9202,15 +7418,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9242,12 +7450,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9260,15 +7463,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9305,12 +7500,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9323,15 +7513,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9368,12 +7550,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9386,15 +7563,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9431,12 +7600,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9449,15 +7613,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9494,12 +7650,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bool p0,
-        bytes32 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bool p0, bytes32 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9514,15 +7665,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9564,12 +7707,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, address p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9598,12 +7736,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, address p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9632,12 +7765,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9666,12 +7794,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9682,15 +7805,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9722,12 +7837,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9756,12 +7866,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9790,12 +7895,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9824,12 +7924,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9840,15 +7935,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -9880,12 +7967,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, address p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9914,12 +7996,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, address p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9948,12 +8025,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9982,12 +8054,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -9998,15 +8065,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10038,12 +8097,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10054,15 +8108,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10094,12 +8140,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10110,15 +8151,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10150,12 +8183,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10166,15 +8194,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10206,12 +8226,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        address p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, address p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10224,15 +8239,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10269,12 +8276,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10303,12 +8305,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10337,12 +8334,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10371,12 +8363,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10387,15 +8374,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10427,12 +8406,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10461,12 +8435,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10495,12 +8464,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10529,12 +8493,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10545,15 +8504,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10585,12 +8536,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10619,12 +8565,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10653,12 +8594,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10687,12 +8623,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10703,15 +8634,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10743,12 +8666,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10759,15 +8677,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10799,12 +8709,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10815,15 +8720,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10855,12 +8752,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10871,15 +8763,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10911,12 +8795,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bool p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bool p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -10929,15 +8808,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -10974,12 +8845,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11008,12 +8874,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11042,12 +8903,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11076,12 +8932,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11092,15 +8943,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11132,12 +8975,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11166,12 +9004,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11200,12 +9033,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11234,12 +9062,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11250,15 +9073,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11290,12 +9105,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11324,12 +9134,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11358,12 +9163,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11392,12 +9192,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11408,15 +9203,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11448,12 +9235,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11464,15 +9246,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11504,12 +9278,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11520,15 +9289,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11560,12 +9321,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11576,15 +9332,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11616,12 +9364,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        uint256 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, uint256 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11634,15 +9377,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11679,12 +9414,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11695,15 +9425,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11735,12 +9457,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11751,15 +9468,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11791,12 +9500,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11807,15 +9511,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11847,12 +9543,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11865,15 +9556,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11910,12 +9593,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11926,15 +9604,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -11966,12 +9636,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -11982,15 +9647,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12022,12 +9679,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12038,15 +9690,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12078,12 +9722,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12096,15 +9735,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12141,12 +9772,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12157,15 +9783,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12197,12 +9815,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12213,15 +9826,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12253,12 +9858,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12269,15 +9869,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12309,12 +9901,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12327,15 +9914,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12372,12 +9951,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12390,15 +9964,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12435,12 +10001,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12453,15 +10014,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12498,12 +10051,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12516,15 +10064,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12561,12 +10101,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        uint256 p0,
-        bytes32 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(uint256 p0, bytes32 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12581,15 +10116,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12631,12 +10158,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12647,15 +10169,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12687,12 +10201,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12703,15 +10212,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12743,12 +10244,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12759,15 +10255,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12799,12 +10287,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12817,15 +10300,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12862,12 +10337,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12878,15 +10348,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12918,12 +10380,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12934,15 +10391,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -12974,12 +10423,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -12990,15 +10434,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13030,12 +10466,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13048,15 +10479,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13093,12 +10516,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13109,15 +10527,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13149,12 +10559,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13165,15 +10570,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13205,12 +10602,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13221,15 +10613,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13261,12 +10645,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13279,15 +10658,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13324,12 +10695,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13342,15 +10708,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13387,12 +10745,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13405,15 +10758,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13450,12 +10795,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13468,15 +10808,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13513,12 +10845,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        address p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, address p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13533,15 +10860,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13583,12 +10902,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13599,15 +10913,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13639,12 +10945,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13655,15 +10956,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13695,12 +10988,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13711,15 +10999,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13751,12 +11031,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13769,15 +11044,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13814,12 +11081,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13830,15 +11092,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13870,12 +11124,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13886,15 +11135,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13926,12 +11167,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -13942,15 +11178,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -13982,12 +11210,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14000,15 +11223,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14045,12 +11260,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14061,15 +11271,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14101,12 +11303,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14117,15 +11314,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14157,12 +11346,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14173,15 +11357,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14213,12 +11389,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14231,15 +11402,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14276,12 +11439,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14294,15 +11452,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14339,12 +11489,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14357,15 +11502,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14402,12 +11539,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14420,15 +11552,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14465,12 +11589,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bool p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bool p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14485,15 +11604,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14535,12 +11646,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14551,15 +11657,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14591,12 +11689,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14607,15 +11700,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14647,12 +11732,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14663,15 +11743,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14703,12 +11775,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14721,15 +11788,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14766,12 +11825,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14782,15 +11836,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14822,12 +11868,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14838,15 +11879,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14878,12 +11911,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14894,15 +11922,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14934,12 +11954,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -14952,15 +11967,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -14997,12 +12004,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15013,15 +12015,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15053,12 +12047,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15069,15 +12058,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15109,12 +12090,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15125,15 +12101,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15165,12 +12133,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15183,15 +12146,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15228,12 +12183,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15246,15 +12196,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15291,12 +12233,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15309,15 +12246,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15354,12 +12283,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15372,15 +12296,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15417,12 +12333,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        uint256 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, uint256 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15437,15 +12348,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15487,12 +12390,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        address p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, address p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15505,15 +12403,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15550,12 +12440,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        address p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, address p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15568,15 +12453,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15613,12 +12490,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        address p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, address p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15631,15 +12503,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15676,12 +12540,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        address p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, address p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15696,15 +12555,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15746,12 +12597,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bool p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bool p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15764,15 +12610,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15809,12 +12647,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bool p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bool p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15827,15 +12660,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15872,12 +12697,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bool p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bool p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15890,15 +12710,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -15935,12 +12747,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bool p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bool p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -15955,15 +12762,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16005,12 +12804,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        uint256 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, uint256 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16023,15 +12817,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16068,12 +12854,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        uint256 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, uint256 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16086,15 +12867,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16131,12 +12904,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        uint256 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, uint256 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16149,15 +12917,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16194,12 +12954,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        uint256 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, uint256 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16214,15 +12969,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16264,12 +13011,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bytes32 p2,
-        address p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bytes32 p2, address p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16284,15 +13026,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16334,12 +13068,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bytes32 p2,
-        bool p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bytes32 p2, bool p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16354,15 +13083,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16404,12 +13125,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bytes32 p2,
-        uint256 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bytes32 p2, uint256 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16424,15 +13140,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))
@@ -16474,12 +13182,7 @@ library safeconsole {
         }
     }
 
-    function log(
-        bytes32 p0,
-        bytes32 p1,
-        bytes32 p2,
-        bytes32 p3
-    ) internal pure {
+    function log(bytes32 p0, bytes32 p1, bytes32 p2, bytes32 p3) internal pure {
         bytes32 m0;
         bytes32 m1;
         bytes32 m2;
@@ -16496,15 +13199,7 @@ library safeconsole {
         assembly {
             function writeString(pos, w) {
                 let length := 0
-                for {
-
-                } lt(length, 0x20) {
-                    length := add(length, 1)
-                } {
-                    if iszero(byte(length, w)) {
-                        break
-                    }
-                }
+                for {} lt(length, 0x20) { length := add(length, 1) } { if iszero(byte(length, w)) { break } }
                 mstore(pos, length)
                 let shift := sub(256, shl(3, length))
                 mstore(add(pos, 0x20), shl(shift, shr(shift, w)))

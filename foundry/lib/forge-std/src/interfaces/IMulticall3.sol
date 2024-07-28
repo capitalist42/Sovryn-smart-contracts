@@ -32,24 +32,14 @@ interface IMulticall3 {
         payable
         returns (uint256 blockNumber, bytes[] memory returnData);
 
-    function aggregate3(Call3[] calldata calls)
-        external
-        payable
-        returns (Result[] memory returnData);
+    function aggregate3(Call3[] calldata calls) external payable returns (Result[] memory returnData);
 
-    function aggregate3Value(Call3Value[] calldata calls)
-        external
-        payable
-        returns (Result[] memory returnData);
+    function aggregate3Value(Call3Value[] calldata calls) external payable returns (Result[] memory returnData);
 
     function blockAndAggregate(Call[] calldata calls)
         external
         payable
-        returns (
-            uint256 blockNumber,
-            bytes32 blockHash,
-            Result[] memory returnData
-        );
+        returns (uint256 blockNumber, bytes32 blockHash, Result[] memory returnData);
 
     function getBasefee() external view returns (uint256 basefee);
 
@@ -79,9 +69,5 @@ interface IMulticall3 {
     function tryBlockAndAggregate(bool requireSuccess, Call[] calldata calls)
         external
         payable
-        returns (
-            uint256 blockNumber,
-            bytes32 blockHash,
-            Result[] memory returnData
-        );
+        returns (uint256 blockNumber, bytes32 blockHash, Result[] memory returnData);
 }

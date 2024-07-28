@@ -17,11 +17,7 @@ interface IERC1155 is IERC165 {
     /// - When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).
     /// - When burning/destroying tokens, the `_to` argument MUST be set to `0x0` (i.e. zero address).
     event TransferSingle(
-        address indexed _operator,
-        address indexed _from,
-        address indexed _to,
-        uint256 _id,
-        uint256 _value
+        address indexed _operator, address indexed _from, address indexed _to, uint256 _id, uint256 _value
     );
 
     /// @dev
@@ -34,11 +30,7 @@ interface IERC1155 is IERC165 {
     /// - When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).
     /// - When burning/destroying tokens, the `_to` argument MUST be set to `0x0` (i.e. zero address).
     event TransferBatch(
-        address indexed _operator,
-        address indexed _from,
-        address indexed _to,
-        uint256[] _ids,
-        uint256[] _values
+        address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values
     );
 
     /// @dev MUST emit when approval for a second party/operator address to manage all tokens for an owner address is enabled or disabled (absence of an event assumes disabled).
@@ -60,13 +52,7 @@ interface IERC1155 is IERC165 {
     /// @param _id ID of the token type
     /// @param _value Transfer amount
     /// @param _data Additional data with no specified format, MUST be sent unaltered in call to `onERC1155Received` on `_to`
-    function safeTransferFrom(
-        address _from,
-        address _to,
-        uint256 _id,
-        uint256 _value,
-        bytes calldata _data
-    ) external;
+    function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;
 
     /// @notice Transfers `_values` amount(s) of `_ids` from the `_from` address to the `_to` address specified (with safety call).
     /// @dev Caller must be approved to manage the tokens being transferred out of the `_from` account (see "Approval" section of the standard).
